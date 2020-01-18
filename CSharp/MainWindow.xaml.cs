@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
@@ -71,6 +72,7 @@ namespace AcrylicBlurDemo
 
             var accent = new AccentPolicy();
             accent.AccentState = AccentState.ACCENT_ENABLE_ACRYLICBLURBEHIND;
+            accent.AccentFlags = 2;
             accent.GradientColor = (_blurOpacity << 24) | (_blurBackgroundColor & 0xFFFFFF);
 
             var accentStructSize = Marshal.SizeOf(accent);
